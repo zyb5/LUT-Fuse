@@ -53,7 +53,15 @@ You can find them under [`./ckpts`](./ckpts).
 
 ## 🧪 Test
 
+```
+CUDA_VISIBLE_DEVICES=0 python test_lut.py
+```
+
 ## 🚀 Train
+
+```
+CUDA_VISIBLE_DEVICES=0 python fine_tune_lut.py
+```
 
 ## 📖 Citation
 
