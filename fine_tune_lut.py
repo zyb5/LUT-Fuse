@@ -219,11 +219,11 @@ if __name__ == "__main__":
 
     DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    lut_filepath = "fine_tuned_lut_l1_ygcy.npy"   # 加载初步初始化的查找表
+    lut_filepath = "ckpts/fine_tuned_lut_original.npy"   # 加载初步初始化的查找表
     lut_tensor = torch.tensor(np.load(lut_filepath).astype(np.float32), device=DEVICE)  # 加载 LUT
     lut = OptimizableLUT(lut_tensor)  # 将 LUT 包装为可优化模块
 
-    context_file = "./finetune_lut_exp/finetune_lut_20250104-171252/generator_context.pth"
+    context_file = "ckpts/generator_context_original.pth"
     Generator_context = Generator_for_info().to(DEVICE)          # 加载context encoder
     Generator_context.load_state_dict(torch.load(context_file))
     # Generator_context.eval()
