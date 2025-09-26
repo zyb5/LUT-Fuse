@@ -45,6 +45,9 @@ You should list your dataset as followed rule:
 
 ## 💾 Checkpoints
 
+We provide our **pretrained checkpoints** directly in this repository for convenience.  
+You can find them under [`./ckpts`](./ckpts).
+
 ## 🧪 Test
 
 ## 🚀 Train
