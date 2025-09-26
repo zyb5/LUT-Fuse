@@ -15,7 +15,7 @@
 
 ---
 
-## Environment
+## ⚙️ Environment
 
 ```
 conda create -n lutfuse python=3.8
