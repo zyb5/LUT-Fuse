@@ -48,6 +48,9 @@ You should list your dataset as followed rule:
 We provide our **pretrained checkpoints** directly in this repository for convenience.  
 You can find them under [`./ckpts`](./ckpts).
 
+- **Fusion LUT weights:** `ckpts/fine_tuned_lut.npy`  
+- **Context generator weights:** `ckpts/generator_context.pth`
+
 ## 🧪 Test
 
 ## 🚀 Train
