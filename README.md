@@ -12,6 +12,9 @@
   </a>
 </p>
 
+<p align="center">
+  <img src="assets/framework.png" alt="LUT-Fuse Framework" width="80%">
+</p>
 
 ---
 
