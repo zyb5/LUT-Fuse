@@ -29,6 +29,20 @@ pip install -r requirements.txt
 
 ## 📂 Dataset
 
+You should list your dataset as followed rule:
+
+```
+|dataset
+  |train
+    |Infrared
+    |Visible
+    |Fuse_ref
+  |test
+    |Infrared
+    |Visible
+    |Fuse_ref
+```
+
 ## 💾 Checkpoints
 
 ## 🧪 Test
