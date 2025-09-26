@@ -1,6 +1,14 @@
-# [ICCV 2025] LUT-Fuse: Towards Extremely Fast Infrared and Visible Image Fusion via Distillation to Learnable Look-Up Tables
+<h1 align="center">[ICCV 2025] LUT-Fuse</h1>
+<p align="center">
+  <em>Towards Extremely Fast Infrared and Visible Image Fusion via Distillation to Learnable Look-Up Tables</em>
+</p>
 
-**[Code](https://github.com/zyb5/LUT-Fuse)** | **[Paper](https://arxiv.org/abs/2509.00346)**
+<p align="center">
+  <a href="https://github.com/zyb5/LUT-Fuse"><b>🔗 Code</b></a> |
+  <a href="https://arxiv.org/abs/2509.00346"><b>📄 Paper</b></a>
+</p>
+
+---
 
 ## 📖 Citation
 
