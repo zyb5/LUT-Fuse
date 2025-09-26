@@ -3,11 +3,10 @@
   <em>Towards Extremely Fast Infrared and Visible Image Fusion via Distillation to Learnable Look-Up Tables</em>
 </p>
 
-<p align="center">
+<p align="center" style="display:flex; justify-content:center; gap:10px;">
   <a href="https://github.com/zyb5/LUT-Fuse">
     <img src="https://img.shields.io/badge/GitHub-Code-black?logo=github" alt="Code" />
   </a>
-  &nbsp;
   <a href="https://arxiv.org/abs/2509.00346">
     <img src="https://img.shields.io/badge/arXiv-Paper-B31B1B?logo=arxiv" alt="Paper" />
   </a>
