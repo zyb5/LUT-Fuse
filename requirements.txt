@@ -87,9 +87,6 @@ stack-data==0.6.3
 sympy
 tensorboard==2.13.0
 tensorboard-data-server==0.7.2
-tensorflow==2.13.1
-tensorflow-estimator==2.13.0
-tensorflow-io-gcs-filesystem==0.34.0
 termcolor==2.4.0
 tifffile==2023.7.10
 tokenizers==0.20.3
