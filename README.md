@@ -1,6 +1,5 @@
 # [ICCV 2025] LUT-Fuse: Towards Extremely Fast Infrared and Visible Image Fusion via Distillation to Learnable Look-Up Tables
 
-If you have any questions, please send an email to zhangyibing@whu.edu.cn
 
 
 ## 📖 Citation
@@ -14,4 +13,7 @@ If you find our work or dataset useful for your research, please cite our paper.
   booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
   year={2025}
 }
+
+If you have any questions, please send an email to zhangyibing@whu.edu.cn
+
 
