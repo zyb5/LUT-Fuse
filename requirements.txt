@@ -6,7 +6,6 @@ Brotli
 cachetools==5.5.0
 certifi
 charset-normalizer
-clip @ git+https://github.com/openai/CLIP.git@dcba3cb2e2827b402d2701e7e1c7d9fed8a20ef1
 contourpy==1.1.1
 cycler==0.12.1
 decorator==5.1.1
