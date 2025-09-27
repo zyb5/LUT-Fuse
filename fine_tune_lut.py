@@ -23,7 +23,6 @@ class TV_4D(nn.Module):
     def __init__(self, dim=16, output_channels=3):
         super(TV_4D, self).__init__()
 
-        # 初始化权重，支持 R、G、B、IR 四个维度
         self.weight_r = torch.ones(dim, dim, dim, dim - 1, output_channels, dtype=torch.float)
         self.weight_r[..., (0, dim - 2), :] *= 2.0
 
@@ -36,7 +35,6 @@ class TV_4D(nn.Module):
         self.weight_ir = torch.ones(dim - 1, dim, dim, dim, output_channels, dtype=torch.float)
         self.weight_ir[(0, dim - 2), :, :, :, :] *= 2.0
 
-        # ReLU 激活函数，用于单调性约束
         self.relu = torch.nn.ReLU()
 
     def forward(self, LUT):
@@ -48,16 +46,14 @@ class TV_4D(nn.Module):
         self.weight_b = self.weight_b.to(device)
         self.weight_ir = self.weight_ir.to(device)
 
-        # R, G, B, IR 每个维度的差异
-        dif_r = LUT[ :, :, :, :-1, :] - LUT[ :, :, :, 1:, :]  # R 维度
-        dif_g = LUT[ :, :, :-1, :, :] - LUT[ :, :, 1:, :, :]  # G 维度
-        dif_b = LUT[ :, :-1, :, :, :] - LUT[ :, 1:, :, :, :]  # B 维度
-        dif_ir = LUT[ :-1, :, :, :, :] - LUT[ 1:, :, :, :, :]  # IR 维度
+        dif_r = LUT[ :, :, :, :-1, :] - LUT[ :, :, :, 1:, :]  
+        dif_g = LUT[ :, :, :-1, :, :] - LUT[ :, :, 1:, :, :]  
+        dif_b = LUT[ :, :-1, :, :, :] - LUT[ :, 1:, :, :, :]  
+        dif_ir = LUT[ :-1, :, :, :, :] - LUT[ 1:, :, :, :, :]  
 
-        # 平滑正则项 (TV)
         tv = (torch.mean(torch.mul(dif_r ** 2, self.weight_r)) + torch.mean(torch.mul(dif_g ** 2, self.weight_g)) +
               torch.mean(torch.mul(dif_b ** 2, self.weight_b)) + torch.mean(torch.mul(dif_ir ** 2, self.weight_ir)))
-        # 单调性约束 (MN)
+
         mn = (torch.mean(self.relu(dif_r)) + torch.mean(self.relu(dif_g)) +
               torch.mean(self.relu(dif_b)) + torch.mean(self.relu(dif_ir)))
 
@@ -202,13 +198,12 @@ def validate_lut(lut_module, val_loader, device):
 
 
 def save_generator_context(generator_context, save_path="generator_context.pth"):
-    """保存 Generator_for_info 模块的权重"""
     torch.save(generator_context.state_dict(), save_path)
     print(f"Generator_for_info weights saved to {save_path}")
 
 if __name__ == "__main__":
 
-    if os.path.exists("./finetune_lut_exp") is False:                             # 保存训练数据
+    if os.path.exists("./finetune_lut_exp") is False:                       
         os.makedirs("./finetune_lut_exp")
     file_name = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     filefold_path = "./finetune_lut_exp/finetune_lut_{}".format(file_name)
@@ -219,12 +214,12 @@ if __name__ == "__main__":
 
     DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    lut_filepath = "ckpts/fine_tuned_lut_original.npy"   # 加载初步初始化的查找表
-    lut_tensor = torch.tensor(np.load(lut_filepath).astype(np.float32), device=DEVICE)  # 加载 LUT
-    lut = OptimizableLUT(lut_tensor)  # 将 LUT 包装为可优化模块
+    lut_filepath = "ckpts/fine_tuned_lut_original.npy"   
+    lut_tensor = torch.tensor(np.load(lut_filepath).astype(np.float32), device=DEVICE) 
+    lut = OptimizableLUT(lut_tensor) 
 
     context_file = "ckpts/generator_context_original.pth"
-    Generator_context = Generator_for_info().to(DEVICE)          # 加载context encoder
+    Generator_context = Generator_for_info().to(DEVICE)        
     Generator_context.load_state_dict(torch.load(context_file))
     # Generator_context.eval()
 
