@@ -50,7 +50,7 @@ def main():
     infrared_files = sorted(os.listdir(infrared_dir))
     visible_files = sorted(os.listdir(visible_dir))
 
-    assert len(infrared_files) == len(visible_files), "红外和可见光文件夹中的图像数量不一致！"
+    assert len(infrared_files) == len(visible_files), "The number of images in the infrared and visible folders do not match!"
     target_size = (128, 128)
     times = []
 
@@ -84,9 +84,9 @@ def main():
         times_after_warmup = times[warmup_skip:]
         avg_time = np.mean(times_after_warmup)
         std_time = np.std(times_after_warmup)
-        print(f"处理完成！跳过前 {warmup_skip} 张图像后，平均时间: {avg_time:.4f} 秒，时间标准差: {std_time:.4f} 秒")
+        print(f"Processing completed! after skipping the first {warmup_skip} images，avg_time: {avg_time:.4f} seconds，std_time: {std_time:.4f} seconds")
     else:
-        print(f"图像数量不足以跳过前 {warmup_skip} 张！总图像数: {len(times)}")
+        print(f"Not enough images to skip the first {warmup_skip} ！Total images: {len(times)}")
 
 if __name__ == "__main__":
     main()
