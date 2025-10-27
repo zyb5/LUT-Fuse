@@ -10,6 +10,9 @@
   <a href="https://arxiv.org/abs/2509.00346" style="text-decoration:none; margin-left:8px;">
     <img src="https://img.shields.io/badge/arXiv-Paper-B31B1B?logo=arxiv" alt="Paper" />
   </a>
+  <a href="https://huggingface.co/spaces/ZYB5/LUT-Fuse-demo" style="text-decoration:none; margin-left:8px;">
+    <img src="https://img.shields.io/badge/HuggingFace-Space-Demo-ffcc00?logo=huggingface" alt="Hugging Face Demo" />
+  </a>
 </p>
 
 <p align="center">
