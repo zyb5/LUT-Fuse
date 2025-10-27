@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/arXiv-Paper-B31B1B?logo=arxiv" alt="Paper" />
   </a>
   <a href="https://huggingface.co/spaces/ZYB5/LUT-Fuse-demo" style="text-decoration:none; margin-left:8px;">
-    <img src="https://img.shields.io/badge/HuggingFace%20Space-Demo-ffcc00?logo=huggingface" alt="Hugging Face Demo" />
+    <img src="https://img.shields.io/badge/HuggingFace%20Space-Demo-ffcc00?logo=huggingface" alt="Hugging Face" />
   </a>
 </p>
 
