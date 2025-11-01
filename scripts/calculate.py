@@ -47,6 +47,15 @@ def generator_block(in_filters, out_filters, normalization=False):
     return layers
 
 
+class OptimizableLUT(torch.nn.Module):
+    def __init__(self, lut_tensor):
+        super(OptimizableLUT, self).__init__()
+        self.lut = torch.nn.Parameter(lut_tensor)
+
+    def forward(self):
+        return self.lut
+
+
 class Generator_for_info(nn.Module):
     def __init__(self, in_channels=4):
         super(Generator_for_info, self).__init__()
